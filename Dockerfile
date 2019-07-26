@@ -8,6 +8,8 @@ RUN cd /usr/local/bin && \
     curl https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip -o terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
     unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
     rm terraform_${TERRAFORM_VERSION}_linux_amd64.zip
+    
+RUN curl -L -o opa https://github.com/open-policy-agent/opa/releases/download/v0.12.1/opa_linux_amd64
 
 COPY opa /usr/local/bin
 
