@@ -9,9 +9,8 @@ RUN cd /usr/local/bin && \
     unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
     rm terraform_${TERRAFORM_VERSION}_linux_amd64.zip
     
-RUN curl -L -o opa https://github.com/open-policy-agent/opa/releases/download/v0.12.1/opa_linux_amd64
-
-COPY opa /usr/local/bin
+RUN cd /usr/local/bin && \
+    curl -L -o opa https://github.com/open-policy-agent/opa/releases/download/v0.12.1/opa_linux_amd64
 
 RUN cd /usr/local/bin && \
     go get github.com/palantir/tfjson
